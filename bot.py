@@ -52,9 +52,11 @@ class MyClient(discord.Client):
     if message.author == self.user:
       return
 
-
     if message.content.startswith('$meme'):
-      await message.channel.send(f"heellooooo {get_meme()}")
+      meme1 = get_meme()
+      text1 = "heellooooo! Here's a meme for you:"
+      text2 = "Enjoy your meme! :)"
+      await message.channel.send(f"{text1}\n{meme1}\n{text2}")
 
 
 # ---------------------------
@@ -63,9 +65,7 @@ class MyClient(discord.Client):
 intents = discord.Intents.default()
 intents.message_content = True
 
-
 client = MyClient(intents=intents)
-
 
 # Get token from environment variable
 TOKEN = os.getenv('DISCORD_TOKEN')
