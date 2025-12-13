@@ -54,9 +54,12 @@ class MyClient(discord.Client):
 
     if message.content.startswith('$meme'):
       meme1 = get_meme()
-      text1 = "heellooooo! Here's a meme for you:"
-      text2 = "Enjoy your meme! :)"
-      await message.channel.send(f"{text1}\n{meme1}\n{text2}")
+      text1 = "heellooooo! here's a meme for you:"
+      text2 = "enjoy your meme! :)"
+
+      embed = discord.Embed(description=f"{text1}\n{text2}")
+      embed.set_image(url=meme1)
+      await message.channel.send(embed=embed)
 
 
 # ---------------------------
