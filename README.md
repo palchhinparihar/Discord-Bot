@@ -3,8 +3,8 @@
 This is a simple Discord bot that responds to commands and sends memes.
 
 ## Features
-- Responds to the `$meme` command by sending two random memes, each with a custom message.
-- Keeps itself alive using a small Flask web server (for hosting on platforms like Replit).
+- Responds to the `$meme` command by sending a random meme, each with custom messages.
+- Keeps itself alive using a small Flask web server (for hosting on platforms like Replit or Render).
 
 ## Usage
 1. Clone this repository.
@@ -22,7 +22,9 @@ This is a simple Discord bot that responds to commands and sends memes.
 	```
 
 ## Commands
-- `$meme` — The bot replies with two memes and custom texts.
+- `$meme` — The bot replies with a meme and custom texts.
+<img width="575" height="631" alt="image" src="https://github.com/user-attachments/assets/08487e25-a81e-4ab1-ac95-c6562d335d66" />
 
 ---
 Feel free to modify or extend the bot!
+Thanks to [Codedex](https://github.com/codedex-io) for the tutorial. :)
