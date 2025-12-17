@@ -1,78 +1,47 @@
-import discord, requests, json, os
-from flask import Flask
-from threading import Thread
+import discord, os
 from dotenv import load_dotenv
 
+from main import keep_alive
+from features.meme_api import get_meme
+from features.random_joke_api import get_joke
+from utils.help_cmd_api import help_text
+from utils.ping import ping
 
-# Load .env file (optional for local development)
+# Load environment variables
 load_dotenv()
 
-
-# ---------------------------
-# Keep-alive web server
-# ---------------------------
-app = Flask('')
-
-
-@app.route('/')
-def home():
-  return "Bot is alive!"
-
-# ---------------------------
-# Run server
-# ---------------------------
-def run():
-  port = int(os.environ.get("PORT", 10000))
-  app.run(host="0.0.0.0", port=port)
-
-
-def keep_alive():
-  t = Thread(target=run)
-  t.start()
-
-
+# Start Flask server
 keep_alive()
 
-
-# ---------------------------
-# Meme function
-# ---------------------------
-def get_meme():
-  response = requests.get('https://meme-api.com/gimme')
-  json_data = json.loads(response.text)
-  return json_data['url']
-
-
-# ---------------------------
-# Discord bot
-# ---------------------------
+# Create a subclass of Client
 class MyClient(discord.Client):
   async def on_ready(self):
-    print(f'Logged on as {self.user}!')
-
+    print(f"Logged on as {self.user}!")
 
   async def on_message(self, message):
     if message.author == self.user:
       return
 
-    if message.content.startswith('$meme'):
-      meme1 = get_meme()
-      text1 = "heellooooo! here's a meme for you:"
-      text2 = "enjoy your meme! :)"
-
-      embed = discord.Embed(description=f"{text1}\n{text2}")
-      embed.set_image(url=meme1)
+    if message.content.startswith("$meme"):
+      embed = discord.Embed(
+        description="heellooooo! here's a meme for you 😄\nenjoy your meme!"
+      )
+      embed.set_image(url=get_meme())
       await message.channel.send(embed=embed)
+    elif message.content.startswith("$joke"):
+      joke = await get_joke()
+      title = "wanna hear a joke? there you go 😂"
+      embed = discord.Embed(
+        description=joke
+      )
+      await message.channel.send(title, embed=embed)
+    elif message.content.startswith("$help"):
+      await message.channel.send(help_text())
+    else:
+      await message.channel.send(ping())
 
-
-# ---------------------------
-# Intents & run
-# ---------------------------
 intents = discord.Intents.default()
 intents.message_content = True
 
 client = MyClient(intents=intents)
-
-# Get token from environment variable
-TOKEN = os.getenv('DISCORD_TOKEN')
-client.run(TOKEN)
+client.run(os.getenv("DISCORD_TOKEN"))
