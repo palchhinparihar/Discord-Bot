@@ -1,54 +1,78 @@
+# Discord-Bot 
 
-# Discord-Bot
+> A cozy, modular Discord bot to brighten up your server with memes, jokes, and friendly vibes.
 
-This is a feature-rich Discord bot that responds to various commands, sends memes and jokes, and provides helpful utilities.
+---
 
-## Features
-- Responds to the following commands:
-	- `$meme` — Sends a random meme from the internet.
-	- `$joke` — Replies with a random joke (using JokeAPI).
-	- `$ping` — Checks if the bot is alive with a fun message.
-	- `$help` — Lists all available commands.
-- Custom help command with all available features.
-- Keeps itself alive using a small Flask web server (for hosting on platforms like Replit or Render).
-- Modular code structure with separate files for features and utilities.
+## ✨ Features
 
-## File Structure
+- **Meme Command**: `$meme` - Get a random meme from the internet, delivered with a warm touch.
+- **Joke Command**: `$joke` - Enjoy a random joke.
+- **Ping, Pong, Diva**: `$ping`, `$pong`, `$diva` - Check if the bot is alive with a playful status message.
+- **Help Command**: `$help` - See all the cozy commands you can use.
+- **Custom Help**: Friendly, easy-to-read help text.
+- **Always Awake**: Stays online with a tiny Flask web server (great for Replit, Render, etc).
+- **Modular Structure**: All features and utilities are neatly organized for easy editing.
+
+---
+
+## 🗂️ File Structure
 
 ```
-bot.py                # Main Discord bot logic
+bot.py                # Discord bot logic & command handling
 main.py               # Flask server to keep bot alive
 requirements.txt      # Python dependencies
 features/
-	meme_api.py         # Fetches memes from meme-api.com
-	random_joke_api.py  # Fetches jokes using JokeAPI
+  meme_api.py         # Fetches memes from meme-api.com
+  random_joke_api.py  # Fetches jokes from Official Joke API
 utils/
-	help_cmd_api.py     # Help command text
-	ping.py             # Ping command responses
+  help_cmd_api.py     # Help command text
+  ping.py             # Ping/pong/diva responses
 ```
 
-## Usage
-1. Clone this repository.
-2. Install dependencies:
-	```
-	pip install -r requirements.txt
-	```
-3. Create a `.env` file with your Discord bot token:
-	```
-	DISCORD_TOKEN=your_token_here
-	```
-4. Run the bot:
-	```
-	python bot.py
-	```
+---
 
-## Commands
-- `$meme` — The bot replies with a random meme and custom text.
-- `$joke` — The bot replies with a random joke.
-- `$ping` — The bot replies with a random status message.
-- `$help` — The bot lists all available commands.
+## 🚀 Getting Started
+
+1. **Clone this repo**
+	```
+	git clone https://github.com/palchhinparihar/Discord-Bot.git
+	```
+2. **Install dependencies**
+   ```
+   pip install -r requirements.txt
+   ```
+3. **Add your Discord token**
+- Create a `.env` file:
+     ```
+     DISCORD_TOKEN=your_token_here
+     ```
+4. **Run the bot**
+   ```
+   python bot.py
+   ```
 
 ---
-Feel free to modify or extend the bot!
 
-Thanks to [Codedex](https://github.com/codedex-io) for the tutorial. :)
+## 💬 Commands
+
+| Command      | What it does                        |
+|--------------|-------------------------------------|
+| `$meme`      | Sends a random meme                 |
+| `$joke`      | Replies with a random joke          |
+| `$ping`, `$pong`, `$diva`   | Bot replies with a status message   |
+| `$help`      | Lists all available commands        |
+
+---
+
+## 🌱 Extend & Enjoy
+
+Feel free to add your own features, tweak responses, or just enjoy the cozy vibes! The code is organized for easy editing and extension.
+
+---
+
+*Thanks to [Codédex](https://github.com/codedex-io) for the inspiration.*
+
+Have any question? Email me on [this](palchhinparihar@gmail.com).
+
+**Made by [Palchhin](https://palchhin.me)~**
