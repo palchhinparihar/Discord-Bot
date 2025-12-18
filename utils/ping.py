@@ -1,5 +1,6 @@
 from random import choice
 
+# Predefined ping/pong/diva responses
 messages = [
   'Hello, Hello! ✨',
   'Pong! 🏓 Diva Bot is alive.',
@@ -10,5 +11,6 @@ messages = [
   'What a beautiful day to be alive! 🌼',
 ]
 
+"""Return a random ping/pong/diva response"""
 def ping():
   return choice(messages)

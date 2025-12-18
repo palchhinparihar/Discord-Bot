@@ -1,3 +1,4 @@
+"""Provide help text for Diva Bot commands"""
 def help_text():
   return (
     "all the commands you can use with Diva Bot:\n\n"
