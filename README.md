@@ -1,3 +1,5 @@
+<img width=90 height=90 src="https://github.com/user-attachments/assets/18196f05-aa51-4ef0-9abb-1f52f5fe9915" alt="Bot profile" />
+
 # Discord-Bot 
 
 > A cozy, modular Discord bot to brighten up your server with memes, jokes, and friendly vibes.
