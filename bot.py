@@ -24,21 +24,22 @@ class MyClient(discord.Client):
 
     if message.content.startswith("$meme"):
       embed = discord.Embed(
-        description="heellooooo! here's a meme for you 😄\nenjoy your meme!"
+        description="Here's a meme for you 😶‍🌫️\nEnjoy your meme!"
       )
       embed.set_image(url=get_meme())
       await message.channel.send(embed=embed)
     elif message.content.startswith("$joke"):
-      joke = await get_joke()
-      title = "wanna hear a joke? there you go 😂"
+      title = "Wanna hear a joke? There you go 👻"
       embed = discord.Embed(
-        description=joke
+        description=get_joke()
       )
       await message.channel.send(title, embed=embed)
     elif message.content.startswith("$help"):
       await message.channel.send(help_text())
-    else:
+    elif message.content.startswith("$ping"):
       await message.channel.send(ping())
+    else:
+      return
 
 intents = discord.Intents.default()
 intents.message_content = True
