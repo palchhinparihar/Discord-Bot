@@ -2,6 +2,10 @@
 
 > A cozy, modular Discord bot to brighten up your server with memes, jokes, and friendly vibes.
 
+<div align="center">
+	<img src="https://github.com/user-attachments/assets/116dcc81-f6d7-4c64-b6fa-dd9807047527" />
+</div>
+
 ---
 
 ## ✨ Features
@@ -73,6 +77,6 @@ Feel free to add your own features, tweak responses, or just enjoy the cozy vibe
 
 *Thanks to [Codédex](https://github.com/codedex-io) for the inspiration.*
 
-Have any question? Email me on [this](palchhinparihar@gmail.com).
+Have any questions? Email me on <a href="mailto:palchhinparihar@gmail.com">this</a>.
 
 **Made by [Palchhin](https://palchhin.me)~**
